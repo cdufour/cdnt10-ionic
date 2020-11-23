@@ -26,9 +26,9 @@
 
     <ion-list>
       <ion-item *ngFor="let student of students">
-        <ion-checkbox [checked]="student.alternant"></ion-checkbox>
+        <ion-checkbox (ionChange)="onChange(student.name)" [checked]="student.alternant"></ion-checkbox>
         <ion-label>{{ student.name }}</ion-label>
-        <ion-button color="primary" (click)="onClick()">Click</ion-button>
+        <ion-button slot="start" color="primary" (click)="onClick(student.id)">Détails</ion-button>
         <ion-badge [color]="student.average > 14 ? 'success' : 'primary'">
           {{ student.average }}</ion-badge>
       </ion-item>

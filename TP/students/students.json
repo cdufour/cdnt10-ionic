@@ -1,0 +1,7 @@
+{
+    "students": [
+        { "id": 0, "name": "Clément", "average": 14.5, "alternant": true },
+        { "id": 1, "name": "Yasmina", "average": 16, "alternant": false },
+        { "id": 2, "name": "Olga", "average": 12.4, "alternant": true }
+    ]
+}
