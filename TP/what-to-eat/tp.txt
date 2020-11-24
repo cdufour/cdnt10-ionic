@@ -1,0 +1,11 @@
+*** TP what-to-eat ***
+Apporter les modifications suivantes à l'application what-to-eat:
+
+    - HomePage: placer au-dessus de la grille des repas
+un menu déroulant affichant les catégories de repas.
+La sélection d'une catégorie mettra à jour la grille des repas.
+Utiliser le composant ion-select: https://ionicframework.com/docs/api/select
+
+    - MealPage:  sous la liste des ingrédients, afficher la liste des "mesures",
+c'est-à-dire des valeurs correspondant aux clés allant de strMeasure1 à
+strMeasure20 du "meal" consulté
