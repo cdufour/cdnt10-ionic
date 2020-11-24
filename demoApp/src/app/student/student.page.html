@@ -1,9 +1,22 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>student {{ studentId }}</ion-title>
+    <ion-title *ngIf="student">{{ student.name }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-card *ngIf="student">
+    <ion-card-header>
+      <ion-card-subtitle>
+        Alternant: {{ student.alternant ? 'oui' : 'non'  }}
+      </ion-card-subtitle>
+      <ion-card-title>{{ student.name }}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+     Cet étudiant a obtenu la moyenne de:
+     <br>
+     <strong [ngClass]="{'good': student.average > 15}">{{ student.average }} / 20</strong>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

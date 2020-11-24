@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-
-interface Student {
-  name: string;
-  average: number;
-  alternant?: boolean; // propriété optionnelle
-  id?: number;
-}
+import { Student } from '../student';
+import { StudentService } from '../student.service';
 
 @Component({
   selector: 'app-home',
@@ -15,16 +10,25 @@ interface Student {
 })
 export class HomePage {
   pageTitle: string = "Démo";
-  students: Student[] = [
-    { id: 0, name: "Clément", average: 14.5, alternant: true },
-    { id: 1, name: "Yasmina", average: 16, alternant: false },
-    { id: 2, name: "Olga", average: 12.4, alternant: true }
-  ];
+  // students: Student[] = [
+  //   { id: 0, name: "Clément", average: 14.5, alternant: true },
+  //   { id: 1, name: "Yasmina", average: 16, alternant: false },
+  //   { id: 2, name: "Olga", average: 12.4, alternant: true }
+  // ];
+  students: Student[] = [];
   message: string = "";
   rawHtml: boolean = false;
 
-  constructor(private router: Router) {
-    this.countAlternant();
+  constructor(
+    private router: Router,
+    private studentService: StudentService) {
+
+      this.studentService.findAll()
+        .subscribe((students: Student[]) => {
+          this.students = students;
+          this.countAlternant();
+        })
+
   }
 
   onClick(studentId: number) {
