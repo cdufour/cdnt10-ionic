@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      {{ "Que manger ?" | uppercase }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid *ngIf="meals">
+    <ion-row>
+      <ion-col *ngFor="let meal of meals" 
+      size="6" [routerLink]="['/meal', meal.idMeal]">
+        <img [src]="meal.strMealThumb" />
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
