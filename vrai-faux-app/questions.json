@@ -70,7 +70,8 @@
             "correct": true, 
             "comment": "",
             "level": "Moyen",
-            "category": "Sport"
+            "category": "Sport",
+            "image": "image9.jpg"
         },
         { 
             "id": 10, 
@@ -86,7 +87,17 @@
             "correct": true, 
             "comment": "",
             "level": "Facile",
-            "category": "Informatique"
+            "category": "Informatique",
+            "image":"image11.png"
+        },
+        { 
+            "id": 12, 
+            "title": "Voici un python", 
+            "correct": false, 
+            "comment": "il s'agit d'un cobra",
+            "level": "Moyen",
+            "category": "Zoologie",
+            "image":"image12.jpg"
         }
     ]
 }
