@@ -8,7 +8,7 @@ souscrites dans une variable (meal ici)
 
   <ion-header>
     <ion-toolbar>
-      <ion-back-button defaultHref="home"></ion-back-button>
+      <ion-back-button slot="start" defaultHref="home"></ion-back-button>
       <ion-title>{{ meal.strMeal }}</ion-title>
     </ion-toolbar>
   </ion-header>
@@ -29,11 +29,10 @@ souscrites dans une variable (meal ici)
       <ion-list-header>
         <ion-label>Ingrédients</ion-label>
       </ion-list-header>
-      <ion-item *ngFor="let ingredient of ingredients">
-        <ion-label>{{ ingredient }}</ion-label>
+      <ion-item *ngFor="let iam of ingredientsAndMeasures">
+        <ion-label>{{ iam }}</ion-label>
       </ion-item>
     </ion-list>
-
 
   </ion-content>
 

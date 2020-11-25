@@ -14,7 +14,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 export class MealPage{
   mealId: string;
   meal$: Observable<MEALDB_Meal>; // propriété contenant un observable
-  ingredients: string[];
+  ingredientsAndMeasures: string[];
 
   constructor(
     private route: ActivatedRoute,
@@ -28,8 +28,7 @@ export class MealPage{
         .getMealById(this.mealId)
         .pipe(
           tap((meal: MEALDB_Meal) => {
-            console.log(meal);
-            this.ingredients = this.getIngredientsArray(meal);
+            this.ingredientsAndMeasures = this.getIngredientsAndMeasuresArray(meal);
           })
         )
 
@@ -44,14 +43,13 @@ export class MealPage{
       );
     }
 
-    private getIngredientsArray(meal: MEALDB_Meal): string[] {
+    private getIngredientsAndMeasuresArray(meal: MEALDB_Meal): string[] {
       let result: string[] = [];
-
       for (let i=1; i<=20; i++) {
-        let value: string = meal["strIngredient" + i];
+        let value: string = 
+          meal["strIngredient" + i] + " " + meal["strMeasure" + i];
         if (value != "") result.push(value)
       }
-
       return result;
     }
 
