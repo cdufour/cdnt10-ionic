@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Tab 3
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>{{ message }}</ion-item>
+  <ion-item>
+    <ion-button (click)="onClick()">Vibrate please</ion-button>
+  </ion-item>
+  <ion-tem>
+    <ion-fab-button href="tel:0711223344">
+      <ion-icon name="call"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button href="sms:0711223344">
+      <ion-icon name="mail"></ion-icon>
+    </ion-fab-button>
+  </ion-tem>
+</ion-content>
